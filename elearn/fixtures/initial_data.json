@@ -1,0 +1,297 @@
+[
+  {
+    "model": "elearn.user",
+    "pk": 1,
+    "fields": {
+      "username": "admin",
+      "email": "admin@elearn.com",
+      "first_name": "System",
+      "last_name": "Administrator",
+      "is_staff": true,
+      "is_superuser": true,
+      "is_active": true,
+      "is_learner": false,
+      "is_instructor": false,
+      "is_admin": true,
+      "date_joined": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "elearn.user",
+    "pk": 2,
+    "fields": {
+      "username": "instructor1",
+      "email": "instructor1@elearn.com",
+      "first_name": "John",
+      "last_name": "Doe",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "is_learner": false,
+      "is_instructor": true,
+      "is_admin": false,
+      "date_joined": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "elearn.user",
+    "pk": 3,
+    "fields": {
+      "username": "learner1",
+      "email": "learner1@elearn.com",
+      "first_name": "Alice",
+      "last_name": "Johnson",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "is_learner": true,
+      "is_instructor": false,
+      "is_admin": false,
+      "date_joined": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "elearn.user",
+    "pk": 4,
+    "fields": {
+      "username": "learner2",
+      "email": "learner2@elearn.com",
+      "first_name": "Bob",
+      "last_name": "Williams",
+      "is_staff": false,
+      "is_superuser": false,
+      "is_active": true,
+      "is_learner": true,
+      "is_instructor": false,
+      "is_admin": false,
+      "date_joined": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "elearn.course",
+    "pk": 1,
+    "fields": {
+      "name": "Python Programming",
+      "color": "#3776ab",
+      "description": "Learn Python programming from basics to advanced concepts",
+      "category": "programming",
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "elearn.course",
+    "pk": 2,
+    "fields": {
+      "name": "Web Development",
+      "color": "#61dafb",
+      "description": "Master web development with HTML, CSS, and JavaScript",
+      "category": "programming",
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "elearn.course",
+    "pk": 3,
+    "fields": {
+      "name": "Data Science",
+      "color": "#ff6b6b",
+      "description": "Explore data science concepts and machine learning",
+      "category": "science",
+      "is_active": true,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "elearn.tutorial",
+    "pk": 1,
+    "fields": {
+      "title": "Python Basics",
+      "content": "Learn the fundamentals of Python programming including variables, data types, and control structures.",
+      "course": 1,
+      "user": 2,
+      "difficulty": "beginner",
+      "duration_minutes": 45,
+      "is_published": true,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "elearn.tutorial",
+    "pk": 2,
+    "fields": {
+      "title": "HTML & CSS Fundamentals",
+      "content": "Master the basics of HTML and CSS for web development.",
+      "course": 2,
+      "user": 2,
+      "difficulty": "beginner",
+      "duration_minutes": 60,
+      "is_published": true,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "elearn.quiz",
+    "pk": 1,
+    "fields": {
+      "owner": 2,
+      "name": "Python Basics Quiz",
+      "course": 1,
+      "description": "Test your knowledge of Python basics",
+      "time_limit_minutes": 30,
+      "passing_score": 70.0,
+      "status": "published",
+      "max_attempts": 3,
+      "created_at": "2024-01-01T00:00:00Z",
+      "updated_at": "2024-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "elearn.question",
+    "pk": 1,
+    "fields": {
+      "quiz": 1,
+      "text": "What is the correct way to create a variable in Python?",
+      "question_type": "multiple_choice",
+      "points": 2,
+      "order": 1
+    }
+  },
+  {
+    "model": "elearn.question",
+    "pk": 2,
+    "fields": {
+      "quiz": 1,
+      "text": "Which of the following is a Python data type?",
+      "question_type": "multiple_choice",
+      "points": 2,
+      "order": 2
+    }
+  },
+  {
+    "model": "elearn.answer",
+    "pk": 1,
+    "fields": {
+      "question": 1,
+      "text": "x = 5",
+      "is_correct": true,
+      "order": 1
+    }
+  },
+  {
+    "model": "elearn.answer",
+    "pk": 2,
+    "fields": {
+      "question": 1,
+      "text": "var x = 5",
+      "is_correct": false,
+      "order": 2
+    }
+  },
+  {
+    "model": "elearn.answer",
+    "pk": 3,
+    "fields": {
+      "question": 2,
+      "text": "int",
+      "is_correct": true,
+      "order": 1
+    }
+  },
+  {
+    "model": "elearn.answer",
+    "pk": 4,
+    "fields": {
+      "question": 2,
+      "text": "string",
+      "is_correct": true,
+      "order": 2
+    }
+  },
+  {
+    "model": "elearn.profile",
+    "pk": 1,
+    "fields": {
+      "user": 1,
+      "first_name": "System",
+      "last_name": "Administrator",
+      "email": "admin@elearn.com",
+      "phonenumber": "+1234567890",
+      "birth_date": "1990-01-01",
+      "bio": "System administrator with extensive experience in e-learning platforms",
+      "city": "New York",
+      "state": "NY",
+      "country": "USA",
+      "favorite_animal": "Eagle",
+      "hobby": "Programming"
+    }
+  },
+  {
+    "model": "elearn.profile",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "first_name": "John",
+      "last_name": "Doe",
+      "email": "instructor1@elearn.com",
+      "phonenumber": "+1234567891",
+      "birth_date": "1985-05-15",
+      "bio": "Experienced Python instructor with 10+ years of teaching experience",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "USA",
+      "favorite_animal": "Dolphin",
+      "hobby": "Teaching"
+    }
+  },
+  {
+    "model": "elearn.profile",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "first_name": "Alice",
+      "last_name": "Johnson",
+      "email": "learner1@elearn.com",
+      "phonenumber": "+1234567892",
+      "birth_date": "1995-08-20",
+      "bio": "Enthusiastic learner passionate about programming and technology",
+      "city": "Los Angeles",
+      "state": "CA",
+      "country": "USA",
+      "favorite_animal": "Cat",
+      "hobby": "Reading"
+    }
+  },
+  {
+    "model": "elearn.learner",
+    "pk": 3,
+    "fields": {
+      "user": 3,
+      "total_score": 0.0,
+      "quizzes_completed": 0
+    }
+  },
+  {
+    "model": "elearn.learner",
+    "pk": 4,
+    "fields": {
+      "user": 4,
+      "total_score": 0.0,
+      "quizzes_completed": 0
+    }
+  },
+  {
+    "model": "elearn.instructor",
+    "pk": 2,
+    "fields": {
+      "user": 2,
+      "is_verified": true
+    }
+  }
+]
